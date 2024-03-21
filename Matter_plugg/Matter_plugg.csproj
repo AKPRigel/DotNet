@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Reference Include="HomeSeerAPI">
+      <HintPath>..\Matter_Pluginig\bin\HomeSeerAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="HSCF">
+      <HintPath>..\Matter_Pluginig\bin\HSCF.dll</HintPath>
+    </Reference>
+    <Reference Include="PluginSdk">
+      <HintPath>..\Matter_Pluginig\bin\PluginSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="Scheduler">
+      <HintPath>..\Matter_Pluginig\bin\Scheduler.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

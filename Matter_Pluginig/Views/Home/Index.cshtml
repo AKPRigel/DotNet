@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Matter Plugin</title>
+</head>
+<body>
+    <h1>Matter Plugin</h1>
+    <form id="deviceForm">
+        <label for="deviceName">Enter device name:</label>
+        <input type="text" id="deviceName" name="deviceName">
+        <input type="submit" value="Submit">
+    </form>
+    <div id="receivedData"></div>
+
+    <script>
+       
+        document.getElementById('deviceForm').addEventListener('submit', function (event) {
+            debugger
+            event.preventDefault();
+            var deviceName = document.getElementById('deviceName').value;
+            createDevice(deviceName);
+        });
+
+        // Send device name to the server
+    
+        function createDevice(deviceName) {
+            fetch('/createDevice?name=' + encodeURIComponent(deviceName))
+                .then(response => response.text())
+                .then(data => {
+                    document.getElementById('receivedData').textContent = data;
+                })
+                .catch(error => {
+                    console.error('Error creating device:', error);
+                });
+        }
+
+        // Update the page with data received from Homeseer
+        function updatePage(data) {
+            document.getElementById('receivedData').textContent = data;
+        }
+    </script>
+</body>
+</html>
